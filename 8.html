@@ -1,0 +1,75 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head><title>select year and semester</title>
+
+<script language = "javascript">
+
+function print()
+{
+
+var yearObj = document.getElementById("chosenYear");
+var semObj = document.getElementById("chosenSem");
+
+var selYear = yearObj.options[yearObj.selectedIndex].text;
+var selSem = semObj.options[semObj.selectedIndex].text;
+
+if(selYear == "1st" && selSem == "1st")
+document.getElementById("show").innerHTML = "<h1> C, ds, E.mech, math1  </h1>";
+else if(selYear == "1st" && selSem == "2nd")
+document.getElementById("show").innerHTML = "<h1> Digital logic & D.Circuit, Data Structure and Algorithms, Electrical Measurements, drawing  </h1>";
+else if(selYear == "2nd" && selSem == "1st")
+document.getElementById("show").innerHTML = "<h1> C++, dbms, Sub - S, Cg  </h1>";
+else if(selYear == "2nd" && selSem == "2nd")
+document.getElementById("show").innerHTML = "<h1> SE, CN, Java, Microprocessor,Numerical methods  </h1>";
+
+else if(selYear == "3rd" && selSem == "1st")
+document.getElementById("show").innerHTML = "<h1> WebTech, Sub - M, TOC, Sub - AC  </h1>";
+else if(selYear == "3rd" && selSem == "2nd")
+document.getElementById("show").innerHTML = "<h1> Automata, Artificial Intelligence, Crypto, Web Tech-2,Design @ Analysis of algo  </h1>";
+else if(selYear == "4th" && selSem == "1st")
+document.getElementById("show").innerHTML = "<h1> Distributed, Sub - O, OS, Sub - AE  </h1>";
+else if(selYear == "4th" && selSem == "2nd")
+document.getElementById("show").innerHTML = "<h1> Economics, Manangement, PR, Digital signal processing  </h1>";
+
+
+
+
+}
+
+
+</script>
+
+</head>
+
+<body>
+
+Year :
+<select id = "chosenYear" name = "year">
+
+<option>1st</option>
+<option>2nd</option>
+<option>3rd</option>
+<option>4th</option>
+
+</select>
+
+<br/>
+<br/>
+
+Semester : 
+
+<select id = "chosenSem" name = "sem">
+
+<option>1st</option>
+<option>2nd</option>
+
+</select>
+
+<p id = "show"></p>
+
+<input type = "button" onclick = "print()" value = "submit" >
+
+
+</body>
+
+</html>
