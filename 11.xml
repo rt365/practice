@@ -1,0 +1,26 @@
+﻿      <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE question-paper [
+
+<!ELEMENT question-paper (question*)>
+<!ELEMENT question (text, optionA, optionB, optionC, optionD, answer)>
+<!ELEMENT text (#PCDATA)>
+<!ELEMENT optionA (#PCDATA)>
+<!ELEMENT optionB (#PCDATA)>
+<!ELEMENT optionC (#PCDATA)>
+<!ELEMENT optionD (#PCDATA)>
+<!ELEMENT answer (#PCDATA)>
+
+<!ATTLIST question no CDATA #REQUIRED>
+<!ATTLIST answer value  (optionA|optionB|optionC|optionD) #REQUIRED>
+
+]>
+<question-paper>
+	<question no="1">
+		<text>What is the full form of DTD</text>
+		<optionA>Document Type Definition</optionA>
+		<optionB>Document To Defined</optionB>
+		<optionC>Defining The Document</optionC>
+		<optionD>Document Tobe Done</optionD>
+		<answer value="optionA"></answer>
+	</question>
+</question-paper>
