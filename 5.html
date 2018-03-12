@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>Validation</title>
+<script>
+/*^	The password string will start this way
+(?=.*[a-z])	The string must contain at least 1 lowercase alphabetical character
+(?=.*[A-Z])	The string must contain at least 1 uppercase alphabetical character
+(?=.*[0-9])	The string must contain at least 1 numeric character
+(?=.*[!@#\$%\^&\*])	The string must contain at least one special character, but we are escaping reserved RegEx characters to avoid conflict
+(?=.{8,})	The string must be eight characters or longer*/
+function x(){
+	var a=document.getElementById('user_id');
+	var b=document.getElementById('pass');
+	var c=document.getElementById('error');
+	var d=new RegExp("^[a-zA-Z0-9]{1}[a-zA-Z0-9_]{1,9}$");
+	var e=new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{6,10})");
+
+
+
+	var res1=d.test(a.value);
+	var res2=e.test(b.value);
+	var str="";
+	
+	if(!res1)
+	{
+		str+="Username cannot be validated.";
+	}
+	else if(res2==false)
+	{
+		str+="Password cannot be validated.";
+	}
+	if(str.length>0)
+	{
+		c.innerHTML=str;
+	}
+}
+</script>
+</head>
+<body>
+
+<label>User Id:</label><input type="text" id="user_id"/><br>
+<label>Password:</label><input type="password" id="pass"/><br>
+<button onclick="x()">Submit</button><br><br>
+<label id="error" style="color:red;"></label>
+</body>
+</html>
