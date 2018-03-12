@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>Payment Portal</title>
+<script>
+function enableTextbox()
+{
+    if (document.getElementById('pl').checked == true)
+    {
+        document.getElementById('dop').disabled=false;
+    }
+    else if(document.getElementById('pn').checked == true)
+    {
+        document.getElementById('dop').disabled=true;
+    }
+}
+</script>
+</head>
+<body>
+<h1>Welcome to payment portal</h1>
+
+<input type="radio" name="mode" value="Pay_Now" checked="true" id="pn" onclick="enableTextbox()">Pay Now<br>
+
+  <input type="radio" name="mode" value="Pay_later" id="pl" onclick="enableTextbox()">Pay Later<br>
+
+  Date of Payment:<input type="date" min=2108-3-02 max=2018-04-12 name="date_of_payment" id="dop" disabled="true">   
+</body>
+</html>
