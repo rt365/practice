@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<title>States</title>
+	<script type="text/javascript">
+
+	function c1()
+	{
+	document.getElementById("x").style.display="none";
+	document.getElementById("3").style.display="none";
+	document.getElementById("4").style.display="none";
+	document.getElementById("5").style.display="none";
+	var x=document.getElementById("1");
+	var z=x.options[x.selectedIndex].value;	
+	if(z=="Rajasthan")
+	document.getElementById("3").style.display="inline";
+	if(z=="West Bengal")
+		document.getElementById("4").style.display="inline";
+	if(z=="Uttar Pradesh")
+	document.getElementById("5").style.display="inline";
+	if(z=="un")
+	document.getElementById("x").style.display="inline";
+	}
+	function c2()
+	{	
+	var x=document.getElementById("1").value;
+
+	if(x=="Rajasthan")
+	{
+	var y=document.getElementById("3").value;
+	if(y=="kt")
+	document.getElementById("0").innerHTML="Patna, is the capital and largest city of the state of Bihar in India. Patna is the second-largest city in eastern India after Kolkata. It had an estimated population of 1.68 million in 2011, making it the 19th largest city in India";
+	if(y=="jp")
+	document.getElementById("0").innerHTML="Gaya is a city of ancient historical and mythological significance. It is one of the major tourist attractions of Bihar."
+	if(y=="up")
+		document.getElementById("0").innerHTML="Nalanda was an acclaimed Mahavihara, a large Buddhist monastery in the ancient kingdom of Magadha in India"
+
+	}
+	if(x=="West Bengal")
+	{
+	var y=document.getElementById("4").value;
+	if(y=="bankur")
+	document.getElementById("0").innerHTML="Dhanbad is a city in the Indian state of Jharkhand, India. It is the second most populated city in Jharkhand. Dhanbad along with its urban areas population ranks 42nd in population amongst other cities in India."
+	if(y=="malda")
+	document.getElementById("0").innerHTML="Bokaro Steel City is a city located in East India in the state of Jharkhand. It is the administrative headquarters of Bokaro district. It is one of the most populous cities in the state of Jharkhand."
+	if(y=="howrah")
+	document.getElementById("0").innerHTML="Ranchi is the capital of the Indian state of Jharkhand, and now it is the most populous city of the state."
+	}
+
+	if(x=="Uttar Pradesh")
+	{
+	var y=document.getElementById("5").value;
+	if(y=="lko")
+	document.getElementById("0").innerHTML="Lucknow district is a district located in the Uttar Pradesh state in northern India. The city of Lucknow is the district headquarters and the district is part of Lucknow Division and also is the capital of Uttar Pradesh.The City was established in 1775 as the nawab of Awadh moved his capital from Faizabad to Lucknow and made it one of the most prosperous and glittering cities in all India.The district has an urban population about 7 million which makes it one of the most populous districts in India."
+	if(y=="rbe")
+	document.getElementById("0").innerHTML="Raebareli district is a district of Uttar Pradesh state in northern India. The town of Raebareli is the district headquarters. The district is part of Lucknow Division."
+	if(y=="knp")
+	document.getElementById("0").innerHTML="Kanpur Dehat district is a district of Uttar Pradesh state in northern India. The administrative headquarters of the district are at Mati-Akbarpur. This district is part of Kanpur division."
+	}
+	}
+
+
+</script>
+</head>
+<body>
+
+Select State:
+<select id="1" onchange="c1();">
+	<option  value="un" selected>States</option>
+	<option value="Rajasthan">BIhar</option>	
+	<option value="Uttar Pradesh">Uttar Pradesh</option>
+	<option value="West Bengal">Jharkhand</option>
+	
+</select>
+
+
+</br></br>Select District:
+
+<select id="x">
+<option>select state first</option>
+</select>
+
+<select style="display:none" id="3">
+    <option selected=""></option>
+	<option value="kt">Patna</option>
+	<option value="jp">Gaya</option>
+	<option value="up">Nalanda</option>
+</select>
+
+<select style="display:none" id="4">
+    <option selected=""></option>
+	<option value="bankur">Dhanbad</option>
+	<option value="malda">Bokaro</option>
+	<option value="howrah">Rachi</option>
+</select>
+
+<select style="display:none" id="5">
+    <option selected=""></option>
+	<option value="lko">Lucknow</option>
+	<option value="rbe">Raebareli</option>
+	<option value="knp">Kanpur nagar</option>
+</select>
+<br>
+<br>
+<input type="submit" name="submit" onclick="c2()">
+<p id="0"></p>
+
+</body>
+</html>
